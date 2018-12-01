@@ -1,0 +1,123 @@
+body {
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor {
+    max-width: 100%;
+    border: 1px solid rgb(177, 0, 0);
+    margin: 10px 50px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.conjunto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.cuadrado {
+    background-color: #7dc900;
+    width: 120px;
+    height: 120px;
+    margin: 15px;
+    transition: 300ms;
+}
+
+.texto {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contenedor:hover .menor {
+    transform: scale(0.5);
+}
+
+.contenedor:hover .mayor {
+    transform: scale(1.5);
+}
+
+.contenedor:hover .ejex {
+    transform: scale(1.5, 1);
+}
+
+.contenedor:hover .ejey {
+    transform: scale(1, 1.5);
+}
+
+.contenedor:hover .ejexy {
+    transform: scale(1.9, 1.4);
+}
+
+
+.contenedor3D{
+    max-width: 100%;
+    height: 300px;
+    margin: 10px 50px;
+    padding-top: 32px;
+    padding-bottom: 5px; 
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 450px;
+    transform-style: preserve-3d;
+}
+
+.cubo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 200px;
+    transform-style: preserve-3d;
+    transition: 1s;
+    transform: rotateY(45deg);
+}
+
+.cubo .cuadrado.frontal{
+    background-color: red;
+    transform: translateZ(60px);
+    position: absolute;
+}
+
+.cubo .cuadrado.trasera{
+    background-color: blue;    
+    position: absolute;
+    transform: rotateY(180deg) translateZ(60px);
+}
+
+.cubo .cuadrado.izquierda{
+    background-color: green; 
+    position: absolute;
+    transform: rotateY(-90deg) translateZ(60px);
+}
+
+.cubo .cuadrado.derecha{
+    background-color: yellow; 
+    position: absolute;
+    transform: rotateY(90deg) translateZ(60px);
+}
+
+.cubo .cuadrado.arriba{
+    background-color: purple; 
+    position: absolute;
+    transform: rotateX(90deg) translateZ(60px);
+}
+
+.cubo .cuadrado.abajo{
+    background-color: orange; 
+    position: absolute;
+    transform: rotateX(-90deg) translateZ(60px);
+}
+
+.contenedor3D:hover .cubo{
+    transform: rotateY(45deg) translateZ(-45px) scale3d(1.0,1.0,2.0);
+}
